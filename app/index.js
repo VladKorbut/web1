@@ -11,12 +11,7 @@ $.ajax({
 	type: "POST",
 	dataType: "jsonp",
 	success: function(data) {
-		results = data.results;
-		console.log(JSON.stringify(results))
-		console.log(results);
-		for (res in results) {
-			console.log()
-		}
+		let results = data.results[url.toString()].shortUrl;
 	}
-
+	
 });

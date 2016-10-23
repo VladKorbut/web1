@@ -1,0 +1,25 @@
+a{
+	display: inline-block;
+	margin: auto;
+}
+a:after{
+	display: block;
+	content: "";
+	width: 100%;
+}
+.form-group, .container{
+	text-align: center;
+}
+.container{
+	margin-top:50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.form-group *{
+	margin: 15px auto;
+}
+
+.input-lg{
+	max-width: 600px;
+}

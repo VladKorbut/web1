@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<script type="text/javascript" src="jquery.js"></script>
+	<title>Web</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-
+	<div class="container" id="container">
+		<div class="form-group">
+			<input type='text' name='link' id='link' class="form-control input-lg">
+			<input id='send' type="submit" name="send" class="btn btn-default btn-lg" value="Получить коротку ссылку" onclick="sendLink()">
+		</div>
+	</div>
 </body>
-<div class="results"></div>
-<script type="text/javascript" src='index.js'></script>
 </html>

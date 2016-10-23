@@ -4,6 +4,9 @@ function getData(value){
 	dataResults = value;
 	return value;
 }
+function copyText(){
+	new Clipboard('.btn-clipboard');
+}
 function sendLink(){
 	var url = document.getElementById('link').value;
 	var decodedUrl = encodeURIComponent(url);
@@ -15,30 +18,47 @@ function sendLink(){
 		type: 'POST',
 		dataType: 'jsonp',
 		success: function(data) {
-			console.log(data)
 			if(!data.errorCode){
-				if(document.getElementsByClassName('alert alert-danger')){
-					$("p.alert-danger").remove()
-				}
+				deleteElement('p','alert-danger');
+				deleteElement('input', 'short-url');
+				deleteElement('a', 'btn-clipboard');
 				var results = data.results[url.toString()].shortUrl;
-				var link = document.createElement('a');
-				link.setAttribute('href', results);
-				link.className = 'btn bnt-link';
-				link.innerHTML = results;
-				container.appendChild(link);
-				var br = document.createElement('br');
-				container.appendChild(br);	
-				var copy = document.createElement('a');
-				link.setAttribute('onclick', 'copyText()');
-				container.appendChild(copy);
+				postInput(results);
+				postButton();
 			}else{
-				var error= document.createElement('p');
-				error.className = 'alert alert-danger';
-				error.innerHTML = "Неправильный ввод! Повторите попытку";
-				container.appendChild(error);
+				deleteElement('p','alert-danger');
+				deleteElement('input', 'short-url');
+				deleteElement('a', 'btn-clipboard');
+				postError();
 			}
 		}
 
 
 	});
+}
+function deleteElement(tag, className){
+	if(document.getElementsByClassName(className)){
+		$(tag+"."+className).remove();
+	}
+}
+function postInput(results) {
+	var link = document.createElement('input');
+	link.setAttribute('value', results);
+	link.setAttribute('class', 'short-url form-control input-lg');
+	container.appendChild(link);
+}
+function postButton(){
+	var copy = document.createElement('a');
+	copy.setAttribute('onclick', 'copyText()');
+	copy.setAttribute('data-clipboard-target', '.short-url');
+	copy.setAttribute('class', 'btn-clipboard');
+	copy.innerHTML = "Скопировать ссылку";
+	container.appendChild(copy);
+}
+
+function postError(){
+	var error= document.createElement('p');
+	error.className = 'alert alert-danger';
+	error.innerHTML = "Неправильный ввод! Повторите попытку";
+	container.appendChild(error);
 }

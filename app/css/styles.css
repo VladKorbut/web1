@@ -1,6 +1,7 @@
 a{
-	display: inline-block;
+	display: block;
 	margin: auto;
+	cursor: pointer;
 }
 a:after{
 	display: block;
@@ -22,4 +23,7 @@ a:after{
 
 .input-lg{
 	max-width: 600px;
+}
+.short-url{
+	max-width: 300px;
 }

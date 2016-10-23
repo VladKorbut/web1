@@ -2,16 +2,17 @@
 <html>
 <head>
 	<title>Web</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<meta charset="utf-8">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script src="js/master/dist/clipboard.min.js"></script>
+	<script src="js/index.js"></script>
 </head>
 <body>
-	<div class="container" id="container">
-		<div class="form-group">
+	<div class="container">
+		<div class="form-group" id="container">
 			<input type='text' name='link' id='link' class="form-control input-lg">
 			<input id='send' type="submit" name="send" class="btn btn-default btn-lg" value="Получить коротку ссылку" onclick="sendLink()">
 		</div>

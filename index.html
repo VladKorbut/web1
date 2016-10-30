@@ -12,9 +12,16 @@
 </head>
 <body>
 	<div class="container">
-		<div class="form-group" id="container">
+		<div class="form-group">
 			<input type='text' name='link' id='link' class="form-control input-lg">
 			<input id='send' type="submit" name="send" class="btn btn-default btn-lg" value="Получить коротку ссылку" onclick="sendLink()">
+			
+				<script id="template" type="text/x-handlebars-template">
+					<input value='{{shortUrl}}' id='short-url' class='short-url form-control input-lg'>
+					<a onclick='copyText()' data-clipboard-target='.short-url' class='btn-clipboard'>Скопировать ссылку</a>
+				</script>
+			<div class="shorten-url">
+			</div>
 		</div>
 	</div>
 </body>

@@ -25,9 +25,10 @@ function sendLink(){
 			}else{
 				postError();
 			}
-		}
-
-
+		},
+	    error: function(){
+	        postNoConn();
+	    }
 	});
 }
 
@@ -35,5 +36,11 @@ function postError(){
 	var error= document.createElement('p');
 	error.className = 'alert alert-danger';
 	error.innerHTML = "Неправильный ввод! Повторите попытку";
+	$('.shorten-url').html(error);
+}
+function postNoConn(){
+	var error= document.createElement('p');
+	error.className = 'alert alert-danger';
+	error.innerHTML = "Нет подключения";
 	$('.shorten-url').html(error);
 }

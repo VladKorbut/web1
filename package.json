@@ -14,7 +14,6 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/vkorbut/vkorbut.bitbucket.org#readme",
   "devDependencies": {
-    "bootstrap": "^3.3.7",
     "bootswatch": "^3.3.7",
     "clipboard": "^1.5.15",
     "handlebars": "^4.0.6",

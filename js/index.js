@@ -1,12 +1,14 @@
 'use strict';
+
+$( document ).ready(function() {
 var dataResults='';
 function getData(value){
 	dataResults = value;
 	return value;
 }
-function copyText(){
-	new Clipboard('.btn-clipboard');
-}
+(function(){
+    new Clipboard('.btn-clipboard');
+})();
 function sendLink(){
 	var url = document.getElementById('link').value;
 	var decodedUrl = encodeURIComponent(url);
@@ -31,7 +33,9 @@ function sendLink(){
 	    }
 	});
 }
-
+$("#send").click(function(){
+	sendLink();
+})
 function postError(){
 	var error= document.createElement('p');
 	error.className = 'alert alert-danger';
@@ -44,3 +48,4 @@ function postNoConn(){
 	error.innerHTML = "Нет подключения";
 	$('.shorten-url').html(error);
 }
+});

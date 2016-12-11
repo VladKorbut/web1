@@ -1,0 +1,22 @@
+{
+  "name": "vkorbut.bitbucket.org",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vkorbut@bitbucket.org/vkorbut/vkorbut.bitbucket.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/vkorbut/vkorbut.bitbucket.org#readme",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "clipboard": "^1.5.15",
+    "handlebars": "^4.0.6",
+    "jquery": "^3.1.1"
+  }
+}
